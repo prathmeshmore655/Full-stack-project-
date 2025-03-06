@@ -1,0 +1,27 @@
+/* Custom CSS */
+.card-body {
+  padding: 2rem; /* Adds more padding inside the card */
+}
+
+.btn-primary {
+  font-size: 1.1rem; /* Increases button font size */
+  padding: 10px; /* Adds more padding to the button */
+}
+
+.form-control {
+  font-size: 1rem; /* Increases font size of input fields */
+}
+
+.login-form-container {
+  padding: 30px;
+  margin: 0 auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+#form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-wrap: wrap;
+}
