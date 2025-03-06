@@ -1,0 +1,259 @@
+/* Root container */
+.root-container {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 100px; /* Space for the chat button */
+  background-color: #f8f9fa; /* Light background */
+}
+
+/* Auction Items */
+.auction-container .card {
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.auction-container .card:hover {
+  transform: scale(1.02);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.card-text strong {
+  font-weight: 600;
+}
+
+.card img {
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+/* Chatbox */
+.chatbox {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 400px;
+  height: 500px;
+  bottom: 80px;
+  left: -450px; /* Start off-screen */
+  z-index: 1050;
+  transition: left 0.5s ease; /* Smooth sliding animation */
+}
+
+.chatbox.open {
+  left: 20px; /* Slide into view */
+}
+
+/* Chatbox header */
+.chatbox .card-header {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+/* Chatbox messages */
+.chatbox .chat-messages {
+  padding: 10px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.chatbox .message-root {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+
+.chatbox .message-root small {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+.chatbox .message-root span {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Chatbox input and button */
+.chatbox form {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.chatbox input {
+  border: 1px solid #ced4da;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.chatbox input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.chatbox button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+/* Chat toggle button */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+
+.btn-primary i {
+  font-size: 1.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chatbox {
+    width: 90%;
+    bottom: 20px;
+    left: -100%; /* Adjust off-screen for smaller screens */
+  }
+
+  .chatbox.open {
+    left: 5%; /* Slide into view */
+  }
+
+  .btn-primary {
+    bottom: 15px;
+    left: 15px;
+  }
+}
+
+
+
+/* Chatbox Container */
+.chat-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+/* Chatbox */
+.chatbox {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Chatbox Header */
+.chatbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #0d6efd;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Close Button in Header */
+.chatbox-header .btn-light {
+  color: #0d6efd;
+  font-size: 14px;
+}
+
+/* Chatbox Body */
+.chatbox-body {
+  height: 250px;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual Chat Messages */
+.chat-message {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.chat-sender-name {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.chat-message-bubble {
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 20px;
+  width: fit-content;
+  background-color: #6c757d;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  word-break: break-word;
+}
+
+.chat-timestamp {
+  font-size: 10px;
+  color: #adb5bd;
+}
+
+/* Chatbox Footer */
+.chatbox-footer {
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Chatbox Input Field */
+.chatbox-footer input.form-control {
+  border-radius: 8px;
+}
+
+/* Send Button */
+.chatbox-footer .btn-primary {
+  font-size: 14px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .chatbox {
+    width: 100%;
+    left: 0;
+    margin-left: 0;
+  }
+
+  .chat-container {
+    left: 10px;
+    right: 10px;
+  }
+}
