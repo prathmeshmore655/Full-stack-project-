@@ -38,7 +38,7 @@ def activate_auction(auction_id):
 @shared_task
 def deactivate_auction(auction_id):
     try:
-        # Fetch the auction
+    
         auction = Auction.objects.get(is_active = True)
 
         if now() >= auction.end_time:

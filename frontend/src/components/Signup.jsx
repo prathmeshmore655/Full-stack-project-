@@ -38,7 +38,7 @@ function Signup() {
       console.log("Signup Response:", data);
 
       if (data.status === 201) {
-        navigate("/login"); // Redirect to login after successful signup
+        navigate("/login"); 
       } else {
         setErrorMessage(data.message || "Signup failed! Please try again.");
       }
