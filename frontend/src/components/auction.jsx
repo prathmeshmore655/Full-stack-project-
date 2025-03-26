@@ -17,7 +17,7 @@ const Auction = () => {
 
   // Fetch auctions with error handling
   const fetchAuctions = useCallback(() => {
-    fetch("http://localhost:8000/API/auction-items", {
+    fetch("http://18.212.69.90:8080/API/auction-items", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const Auction = () => {
 
   // Fetch user data
   const Get_User = useCallback(() => {
-    fetch('http://localhost:8000/API/get_user', {
+    fetch('http://18.212.69.90:8080/API/get_user', {
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const Auction = () => {
 
   // WebSocket for chat
   useEffect(() => {
-    socketRef.current = new WebSocket("ws://localhost:8080/ws/chat_auction/general/");
+    socketRef.current = new WebSocket("http://18.212.69.90:8080/ws/chat_auction/general/");
   
     socketRef.current.onmessage = (event) => {
       const receivedData = JSON.parse(event.data);

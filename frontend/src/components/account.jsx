@@ -19,7 +19,7 @@ const Account = () => {
         fetchUserData();
     }, [csrfToken, userUpdated]); 
     const fetchUserData = () => {
-        fetch('http://localhost:8000/API/get_user', {
+        fetch('http://18.212.69.90:8080/API/get_user', {
             method: 'GET',
             headers: { 'X-CSRFToken': csrfToken },
             credentials: 'include',
@@ -31,7 +31,7 @@ const Account = () => {
                 setLoading(false);
                 setImage(
                     data.info.profile_image !== null
-                        ? `http://localhost:8000${data.info.profile_image}`
+                        ? `http://18.212.69.90:8080${data.info.profile_image}`
                         : '/assests/default.png'
                 );
             })
@@ -79,7 +79,7 @@ const Account = () => {
             updateFormData.append('profile_image', newProfileImage);
         }
 
-        fetch('http://localhost:8000/API/update_user', {
+        fetch('http://18.212.69.90:8080/API/update_user', {
             method: 'POST',
             headers: {
                 'X-CSRFToken': csrfToken,
