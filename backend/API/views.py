@@ -4,13 +4,13 @@ from API.serializers import *
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated , AllowAny
 from django.core.mail import send_mail
 from App.models import *
 
 class UserViewsAPI(APIView):
 
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
     def get(self, request):
 
@@ -86,11 +86,11 @@ class UserViewsAPI(APIView):
 
 class ProductAPI(APIView):
 
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
     def get(self ,request):
 
-        user = request.user
+        user = request.user.id
 
         all_products = Products_Upload.objects.all()
 
@@ -139,10 +139,11 @@ class ProductAPI(APIView):
 
 class CartAPI(APIView):
 
+    permission_classes = [AllowAny]
 
     def get(self , request):
 
-        user = request.user
+        user = request.user.id
 
         cart = CartItems.objects.filter(user = user)
 
@@ -173,6 +174,7 @@ class CartAPI(APIView):
 
 class WishListAPI(APIView):
 
+    permission_classes = [AllowAny]
 
 
     def get(self , request ):
@@ -248,6 +250,9 @@ from django.conf import settings
 
 class ContactAPI(APIView):
 
+    permission_classes = [AllowAny]
+
+
     def post (self , request):
         
         data = request.data
@@ -271,6 +276,9 @@ class ContactAPI(APIView):
 
 class Offers_Deals_API(APIView):
 
+    permission_classes = [AllowAny]
+
+
     def get(self, request):
 
 
@@ -286,6 +294,9 @@ class Offers_Deals_API(APIView):
 
 
 class AuctionAPI(APIView):
+
+    permission_classes = [AllowAny]
+
 
     def get(self , request):
 

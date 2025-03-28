@@ -28,7 +28,6 @@ const Account = () => {
             .then(data => {
                 setUser(data);
                 setFormData(data);
-                setLoading(false);
                 setImage(
                     data.info.profile_image !== null
                         ? `http://18.212.69.90:8080${data.info.profile_image}`
@@ -37,7 +36,6 @@ const Account = () => {
             })
             .catch(error => {
                 console.error("Error fetching user data:", error);
-                setLoading(false);
             });
     };
 
@@ -106,9 +104,6 @@ const Account = () => {
             });
     };
 
-    if (loading) {
-        return <div className="d-flex justify-content-center align-items-center vh-100">Loading...</div>;
-    }
 
     return (
         <div className="container my-5">

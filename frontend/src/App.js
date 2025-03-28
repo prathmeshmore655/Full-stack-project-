@@ -45,7 +45,7 @@ function App() {
           <Route path='/about-us' element={isAuthenticated ? <About /> : <Navigate to="/" />} />
           <Route path='/contact-us' element={isAuthenticated ? <Contact /> : <Navigate to="/" />} />
           <Route path='/cart' element={isAuthenticated ? <Cart /> : <Navigate to="/" />} />
-          <Route path='/account' element={isAuthenticated ? <Account /> : <Navigate to="/" />} />
+          {/* <Route path='/account' element={isAuthenticated ? <Account /> : <Navigate to="/" />} /> */}
           <Route path='/wishlist' element={isAuthenticated ? <Wishlist /> : <Navigate to="/" />} />
           <Route path='/help-support' element={isAuthenticated ? <Help /> : <Navigate to="/" />} />
           <Route path='/offers-deals' element={isAuthenticated ? <Offers /> : <Navigate to="/" />} />

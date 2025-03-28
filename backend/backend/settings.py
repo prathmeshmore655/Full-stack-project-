@@ -132,19 +132,27 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-CORS_ALLOWED_ORIGINS = [
-    '*'
-]
-
-CORS_ALLOW_CREDENTIALS = True
 
 
 
+CORS_ALLOW_ALL_ORIGINS = True  
+CORS_ALLOW_CREDENTIALS = True  
+
+# Allow all CSRF trusted origins
 CSRF_TRUSTED_ORIGINS = [
-
-    '*',
+     "http://localhost",
+    "http://127.0.0.1",
+    "http://127.0.0.1:8000",  # Django default
+    "http://127.0.0.1:8080",  # If your frontend runs on 8080
+    "https://yourdomain.com",
+    "http://127.0.0.1:3000",  # If your frontend runs on 8080
 
 ]
+
+
+
+
+
 
 REST_FRAMEWORK = {
         'DEFAULT_AUTHENTICATION_CLASSES': [

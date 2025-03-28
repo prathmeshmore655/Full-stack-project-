@@ -60,9 +60,9 @@ function Navbar() {
                                 <li className="nav-item">
                                     <Link to="/cart" className="nav-link">Cart</Link>
                                 </li>
-                                <li className="nav-item">
+                                {/* <li className="nav-item">
                                     <Link to="/account" className="nav-link">Account</Link>
-                                </li>
+                                </li> */}
                                 <li className="nav-item">
                                     <Link to="/wishlist" className="nav-link">Wishlist</Link>
                                 </li>
